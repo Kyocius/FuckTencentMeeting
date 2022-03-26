@@ -15,6 +15,7 @@ while (true)
 
     if (now == dateTime)
     {
+        Console.WriteLine($"已经到达指定时间({now})，正在启动腾讯会议");
         Start(code);
         break;
     }
@@ -30,7 +31,7 @@ void Start(string code)
     Thread.Sleep(500);
 
     new InputSimulator().Keyboard.TextEntry(code);
-    Thread.Sleep(1000);
+    Thread.Sleep(500);
 
     Win32Method.LeftMouseClick(959, 813);
     Console.WriteLine("入会成功了吧");
