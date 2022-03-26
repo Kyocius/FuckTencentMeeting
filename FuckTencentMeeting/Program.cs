@@ -2,9 +2,9 @@
 using System.Diagnostics;
 using WindowsInput;
 
-Console.WriteLine("会议号？ ");
+Console.WriteLine("输入一下会议号？ ");
 string code = Console.ReadLine(); //会议号
-Console.WriteLine("预定时间？(天数/小时/分钟)  ");
+Console.WriteLine("输入一下预定时间？(天/小时/分钟)  ");
 string now = Console.ReadLine(); //预定时间
 
 var dateTime = DateTime.Now.ToString("dd/H/m");
@@ -12,7 +12,6 @@ var dateTime = DateTime.Now.ToString("dd/H/m");
 while (true)
 {
     dateTime = DateTime.Now.ToString("dd/H/m");
-    Console.WriteLine(dateTime);
 
     if (now == dateTime)
     {
@@ -25,7 +24,7 @@ void Start(string code)
 {
     //这里改成自己的安装路径
     Process.Start("E:\\Tencent Room\\WeMeet\\wemeetapp.exe");
-    Thread.Sleep(3000);
+    Thread.Sleep(3800);
 
     Win32Method.LeftMouseClick(820, 319);
     Thread.Sleep(500);
