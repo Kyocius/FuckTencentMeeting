@@ -12,6 +12,12 @@
 - 注意本程序默认基于 1080P 分辨率，其它分辨率可是使用 `Snipaste` 软件获取坐标
 - 由于使用了 .NET Framework 的 NuGet 库，不能跨平台...
 
+## 文件说明
+| 文件名            | 描述                |
+| -----------      | -----------        |
+| Program.cs       | 主逻辑程序           |
+| Win32Method.cs   | 封装了一些 Win32 API |
+
 ## 引用
 
 本项目使用了 `H.InputStimulator` 库 (Target 4.6.2)
