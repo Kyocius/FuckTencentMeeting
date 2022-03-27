@@ -16,17 +16,21 @@
 ## 文件说明
 | 文件名            | 描述                |
 | -----------      | -----------        |
-| Program.cs       | 主逻辑程序           |
+| Program.cs       | 简单的主逻辑程序           |
 | Win32Method.cs   | 封装了一些 Win32 API |
 
 ## 使用教程
 1.  Clone 本项目
 2.  在 `Program.cs` 中，修改腾讯会议的安装路径
-3.  执行 `dotnet publish` 命令
+![使用](./usage.png)
+3. 使用 `Snipaste` 或其他软件获取需要按点击的坐标
+4.  执行 `dotnet publish` 命令，生成 .exe 文件
 
 ## 引用
 
-本项目使用了 `H.InputStimulator` 库 (Target 4.6.2)
+本项目使用了 `H.InputStimulator` 库
 
 ## 演示
-![演示](./showcase.gif)
+![演示](./demo.gif)
+
+## 协议
