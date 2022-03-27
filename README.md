@@ -33,4 +33,5 @@
 ## 演示
 ![演示](./demo.gif)
 
-## 协议
+## 开源协议
+Do What The Fuck You Want To Public License
