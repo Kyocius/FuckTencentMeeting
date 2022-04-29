@@ -1,9 +1,12 @@
 # 📡 腾讯会议自动入会
-使用 C#10 编写，自动进入会议，解放你的双手(
+使用 C# 编写的自动进入会议程序，~~便于摸鱼~~
+
+## 演示
+![演示](./demo.gif)
 
 ## 环境要求
 - .NET 6.0+
-- Windows 10+ 操作系统
+- Windows 10+ 
 - Visual Studio 2022 / VS Code + C# Extension
 
 ## 背景
@@ -14,24 +17,17 @@
 - 由于使用了 .NET Framework 的 NuGet 库，不能跨平台
 
 ## 文件说明
-| 文件名            | 描述                |
+| 文件名           | 描述                |
 | -----------      | -----------        |
-| Program.cs       | 简单的主逻辑程序           |
-| Win32Method.cs   | 封装了一些 Win32 API |
+| Program.cs       | 超级简单的主逻辑程序 |
+| Win32Method.cs   | 封装了两个 Win32 API |
 
 ## 使用教程
 1.  Clone 本项目
 2.  在 `Program.cs` 中，修改腾讯会议的安装路径
 ![使用](./usage.png)
-3. 使用 `Snipaste` 或其他软件获取需要按点击的坐标
+3. 使用 `Snipaste` 或其他软件，获取需要按点击的坐标
 4.  执行 `dotnet publish` 命令，生成 .exe 文件
-
-## 引用
-
-本项目使用了 `H.InputStimulator` 库
-
-## 演示
-![演示](./demo.gif)
 
 ## 开源协议
 Do What The Fuck You Want To Public License
