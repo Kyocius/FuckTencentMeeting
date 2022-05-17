@@ -1,3 +1,4 @@
+## 👁️ 关注最新 [重构升级版](https://github.com/Yoroion/FuckMeetingPlus)
 # 📡 腾讯会议自动入会
 > 使用 C# 编写的自动进入会议程序，~~便于摸鱼~~
 
