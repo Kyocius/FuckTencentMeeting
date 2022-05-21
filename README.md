@@ -18,22 +18,20 @@
 
 ## 演示
 
-![演示](./demo.gif)
+<img src="./demo.gif" alt="演示" style="zoom: 50%;" />
 
 ## 文件说明
 
 | 文件名           | 描述        |
 | -----------      |-----------|
-| Program.cs       | 极简简主逻辑    |
+| Program.cs       | 极简的主逻辑   |
 | Win32Method.cs   | Win32 API 封装 |
 
 ## 使用教程
 1. 在 `Program.cs` 中，修改腾讯会议的安装路径
 
-![使用](./usage.png)
-
 2. 使用 *Snipaste* 或其他软件，获取需要按点击的坐标
-3. 执行 `dotnet publish` 命令，生成 .exe 文件
+3. 执行 `dotnet publish` 命令，生成可执行文件
 4. 注意输入预定时间需要符合格式，如 `08/59`
 
 ## 开源协议
