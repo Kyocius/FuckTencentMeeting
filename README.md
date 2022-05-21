@@ -1,43 +1,41 @@
-## 👁️ 关注 [GUI 重构版](https://github.com/Yoroion/FuckMeetingPlus)
+## 👁️ 来看看 [GUI版](https://github.com/Yoroion/FuckMeetingPlus)
 
 # 📡 腾讯会议自动入会
 
-> 使用 C# 编写的自动进入会议程序，~~便于摸鱼~~
+> 使用 C# 编写的自动进入会议程序 ~~便于摸鱼~~
 
 ## 环境要求
 
-- .NET 6.0 SDK
+- 任意一个可以写 C# 的 IDE 或编辑器
+- .NET SDK 6.0
 - Windows 10 或更高
-- Visual Studio 2022 或 VS Code 或 Rider
+
+## 背景
+
+疫情防控导致学校停课，老师使用腾讯会议上课，经常要求在奇怪的时间点进入会议...
+
+所以写了这个程序，顺便练练 C# 语言
 
 ## 演示
 
 ![演示](./demo.gif)
 
-## 背景
-
-- 疫情防控导致学校停课，老师上课使用腾讯会议，我受到启发，写了这个程序，顺便练练 C# 语言
-- 逻辑就是设置时间，获取按钮所在的坐标，模拟鼠标点击和键盘输入
-- 由于使用了 .NET Framework 的 NuGet 库和 Win32 API，肯定是不能跨平台的
-- **注意**：本程序默认基于 1080P 分辨率，其它分辨率可以使用 `Snipaste` 软件获取坐标
-
 ## 文件说明
 
-| 文件名           | 描述                |
-| -----------      | -----------        |
-| Program.cs       | 超级简单的主逻辑程序 |
-| Win32Method.cs   | 封装了两个 Win32 API |
+| 文件名           | 描述        |
+| -----------      |-----------|
+| Program.cs       | 极简简主逻辑    |
+| Win32Method.cs   | Win32 API 封装 |
 
 ## 使用教程
-
-1. Clone 本项目
-2. 在 `Program.cs` 中，修改腾讯会议的安装路径
+1. 在 `Program.cs` 中，修改腾讯会议的安装路径
 
 ![使用](./usage.png)
 
-3. 使用 `Snipaste` 或其他软件，获取需要按点击的坐标
-4. 执行 `dotnet publish` 命令，生成 .exe 文件
+2. 使用 *Snipaste* 或其他软件，获取需要按点击的坐标
+3. 执行 `dotnet publish` 命令，生成 .exe 文件
+4. 注意输入预定时间需要符合格式，如 `08/59`
 
 ## 开源协议
 
-Do What The Fuck You Want To Public License
+FuckTencentMeeting 基于 WTFPL 协议开源
