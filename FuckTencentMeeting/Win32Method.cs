@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using WindowsInput;
 
 namespace FuckTencentMeeting
 {
@@ -22,6 +19,11 @@ namespace FuckTencentMeeting
             SetCursorPos(Xposition, Yposition);
             mouse_event(MOUSEEVENTF_LEFTDOWN, Xposition, Yposition, 0, 0);
             mouse_event(MOUSEEVENTF_LEFTUP, Xposition, Yposition, 0, 0);
+        }
+
+        internal static void KeyInput(string str)
+        {
+            new InputSimulator().Keyboard.TextEntry(str);
         }
     }
 }

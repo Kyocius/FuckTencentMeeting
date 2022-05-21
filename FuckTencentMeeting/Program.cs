@@ -1,38 +1,47 @@
 ﻿using FuckTencentMeeting;
 using System.Diagnostics;
-using WindowsInput;
 
 Console.WriteLine("输入一下会议号？ ");
-string code = Console.ReadLine(); //会议号
-Console.WriteLine("输入一下预定时间？(天/小时/分钟)  ");
-string now = Console.ReadLine(); //预定时间
+string meetingId = Console.ReadLine(); //会议号
 
-var dateTime = DateTime.Now.ToString("dd/H/m");
+Console.WriteLine("输入一下预定时间？(天/小时/分钟)  ");
+string reserveTime = Console.ReadLine(); //预定时间
+
+string now;
 
 while (true)
 {
-    dateTime = DateTime.Now.ToString("dd/H/m");
+    now = DateTime.Now.ToString("HH/mm"); //注意格式：小时/分钟，删除了输入麻烦的日期
 
-    if (now == dateTime)
+    if (reserveTime == now)
     {
-        Console.WriteLine($"已经到达指定时间({now})，正在启动腾讯会议");
-        Start(code);
+        Console.WriteLine($"已经到达指定时间({reserveTime})，正在启动腾讯会议");
+        Start(meetingId);
         break;
     }
 }
 
-void Start(string code)
+void Start(string meetingId)
 {
     //这里改成自己的安装路径
-    Process.Start("E:\\Tencent Room\\WeMeet\\wemeetapp.exe");
-    Thread.Sleep(3800);
+    try
+    {
+        Process.Start("E:\\Tencent Room\\WeMeet\\wemeetapp.exe");
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e);
+        throw;
+    }
+
+    Thread.Sleep(3800); //单位为毫秒
 
     Win32Method.LeftMouseClick(820, 319);
     Thread.Sleep(500);
 
-    new InputSimulator().Keyboard.TextEntry(code);
+    Win32Method.KeyInput(meetingId);
     Thread.Sleep(500);
 
     Win32Method.LeftMouseClick(959, 813);
-    Console.WriteLine("入会成功了吧");
+    Console.WriteLine("成功加入会议");
 }
