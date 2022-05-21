@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="H.InputSimulator" Version="1.2.5" />
+    <PackageReference Include="Spectre.Console" Version="0.44.1-preview.0.17" />
   </ItemGroup>
 
 </Project>

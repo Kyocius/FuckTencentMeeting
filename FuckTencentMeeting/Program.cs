@@ -1,13 +1,39 @@
 ﻿using FuckTencentMeeting;
 using System.Diagnostics;
+using Spectre.Console;
 
-Console.WriteLine("输入一下会议号？ ");
-string meetingId = Console.ReadLine(); //会议号
+#region 配置区域
 
-Console.WriteLine("输入一下预定时间？(天/小时/分钟)  ");
-string reserveTime = Console.ReadLine(); //预定时间
-
+var meetingId = AnsiConsole.Ask<string>("请输入[green]腾讯会议号[/] "); //会议号
+var reserveTime = AnsiConsole.Ask<string>("请输入[green]预定时间[/] [red](小时/分钟)[/] "); //预定时间
+const string path = "E:\\Tencent Room\\WeMeet\\wemeetapp.exe";
+const int x1 = 820;
+const int y1 = 319;
+const int x2 = 959;
+const int y2 = 813;
+const int waitTime = 3800; //单位为毫秒
 string now;
+
+#endregion
+
+#region 渲染表格
+
+AnsiConsole.MarkupLine("请检查[yellow]配置[/]");
+
+var table = new Table();
+table.Border(TableBorder.Rounded);
+
+table.AddColumn("腾讯会议安装路径");
+table.AddColumn("会议号");
+table.AddColumn("预定时间");
+table.AddColumn("按钮1");
+table.AddColumn("按钮2");
+table.AddRow(path, meetingId, reserveTime, $"({x1}, {y1})", $"({x2}, {y2})");
+
+AnsiConsole.Write(table);
+AnsiConsole.MarkupLine("程序正在[green]运行[/]，等待到达指定时间...");
+
+#endregion
 
 while (true)
 {
@@ -15,33 +41,33 @@ while (true)
 
     if (reserveTime == now)
     {
-        Console.WriteLine($"已经到达指定时间({reserveTime})，正在启动腾讯会议");
         Start(meetingId);
         break;
     }
 }
 
-void Start(string meetingId)
+void Start(string id)
 {
-    //这里改成自己的安装路径
+    AnsiConsole.MarkupLine($"已经到达[yellow]指定时间({reserveTime})[/]，正在启动[blue]腾讯会议[/]");
     try
     {
-        Process.Start("E:\\Tencent Room\\WeMeet\\wemeetapp.exe");
+        Process.Start(path);
     }
     catch (Exception e)
     {
-        Console.WriteLine(e);
+        AnsiConsole.WriteException(e);
         throw;
     }
 
-    Thread.Sleep(3800); //单位为毫秒
+    Thread.Sleep(waitTime);
 
-    Win32Method.LeftMouseClick(820, 319);
+    Win32Method.LeftMouseClick(x1, y1);
     Thread.Sleep(500);
 
-    Win32Method.KeyInput(meetingId);
+    Win32Method.KeyInput(id);
     Thread.Sleep(500);
 
-    Win32Method.LeftMouseClick(959, 813);
-    Console.WriteLine("成功加入会议");
+    Win32Method.LeftMouseClick(x2, y2);
+    
+    AnsiConsole.MarkupLine("[green]成功[/]加入会议");
 }
