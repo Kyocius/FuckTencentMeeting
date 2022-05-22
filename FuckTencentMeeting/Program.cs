@@ -6,12 +6,12 @@ using Spectre.Console;
 
 var meetingId = AnsiConsole.Ask<string>("请输入[green]腾讯会议号[/] "); //会议号
 var reserveTime = AnsiConsole.Ask<string>("请输入[green]预定时间[/] [red](小时/分钟)[/] "); //预定时间
-const string path = "E:\\Tencent Room\\WeMeet\\wemeetapp.exe";
-const int x1 = 820;
-const int y1 = 319;
-const int x2 = 959;
-const int y2 = 813;
-const int waitTime = 3800; //单位为毫秒
+const string path = "E:\\Tencent Room\\WeMeet\\wemeetapp.exe"; //安装路径
+const int x1 = 820; //横坐标1
+const int y1 = 319; //纵坐标1
+const int x2 = 959; //横坐标2
+const int y2 = 813; //纵坐标2
+const int waitTime = 3800; //等待腾讯会议启动时间，单位为毫秒
 string now;
 
 #endregion
@@ -35,10 +35,11 @@ AnsiConsole.MarkupLine("程序正在[green]运行[/]，等待到达指定时间.
 
 #endregion
 
+//用while循环确实有点低端，但理解起来很方便，内存占用也不是很大(
 while (true)
 {
     now = DateTime.Now.ToString("HH/mm"); //注意格式：小时/分钟，删除了输入麻烦的日期
-
+    
     if (reserveTime == now)
     {
         Start(meetingId);
@@ -68,6 +69,6 @@ void Start(string id)
     Thread.Sleep(500);
 
     Win32Method.LeftMouseClick(x2, y2);
-    
+
     AnsiConsole.MarkupLine("[green]成功[/]加入会议");
 }
