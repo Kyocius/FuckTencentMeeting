@@ -37,9 +37,16 @@
 
 ## 使用教程
 1. 在 `Program.cs` 中，修改配置区域
-![Config](./Docs/Config.png)
+    ![Config](./Docs/Config.png)
+
 2. 使用 *Snipaste* 或其他软件，获取需要按点击的坐标
+
+    ![按钮1](./Docs/按钮1.png)
+   
+    ![按钮2](./Docs/按钮2.png)
+
 3. 执行 `dotnet publish` 命令，生成可执行文件
+
 4. 注意输入预定时间需要符合格式，如 `08/59`
 
 ## 开源协议
