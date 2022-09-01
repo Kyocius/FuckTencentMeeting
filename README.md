@@ -1,4 +1,4 @@
-## 👁️ 来看看 [GUI 版](https://github.com/Yoroion/FuckMeetingPlus)
+## ⚠️ 推荐使用 [GUI 版](https://github.com/Yoroion/FuckMeetingPlus)
 
 # 📡 FuckTencentMeeting
 
